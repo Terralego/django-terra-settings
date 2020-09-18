@@ -1,4 +1,4 @@
 include *.md
-recursive-include terra_utils *.md
-recursive-include terra_utils *.py
-recursive-exclude test_terra_utils *
+recursive-include terra_settings *.md
+recursive-include terra_settings *.py
+recursive-exclude test_terra_settings *

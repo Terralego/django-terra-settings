@@ -19,12 +19,12 @@ sys.path.insert(0, root)
 
 # -- Project information -----------------------------------------------------
 
-project = 'django-terra-utils'
+project = 'django-terra-settings'
 copyright = '2019, Makina Corpus'
 author = 'Makina Corpus'
 
 # The full version, including alpha/beta/rc tags
-release = open(os.path.join(root, 'terra_utils', 'VERSION.md')).read()
+release = open(os.path.join(root, 'terra_settings', 'VERSION.md')).read()
 
 
 # -- General configuration ---------------------------------------------------

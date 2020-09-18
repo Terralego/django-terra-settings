@@ -6,8 +6,8 @@ from django.test import TestCase
 from django.test.client import RequestFactory
 from rest_framework import status
 
-from terra_utils.helpers import Choices, CustomCsvBuilder
-from terra_utils.helpers.responses import get_media_response
+from terra_settings.helpers import Choices, CustomCsvBuilder
+from terra_settings.helpers.responses import get_media_response
 
 
 class CSVTestCase(TestCase):

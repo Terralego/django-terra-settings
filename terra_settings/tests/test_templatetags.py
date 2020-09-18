@@ -1,7 +1,7 @@
 from django.template import Context, Template
 from django.test import TestCase
 
-from terra_utils import settings
+from terra_settings import settings
 
 
 class TemplatesTagsTestCase(TestCase):

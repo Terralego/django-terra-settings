@@ -11,7 +11,7 @@ In your project :
     INSTALLED_APPS = [
         ...
         # Utils app
-        'terra_utils',
+        'terra_settings',
         ...
     ]
 

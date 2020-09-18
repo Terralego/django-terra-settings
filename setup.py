@@ -10,8 +10,8 @@ CHANGES = open(os.path.join(HERE, 'CHANGES.md')).read()
 
 
 setup(
-    name='django-terra-utils',
-    version=open(os.path.join(HERE, 'terra_utils', 'VERSION.md')).read().strip(),
+    name='django-terra-settings',
+    version=open(os.path.join(HERE, 'terra_settings', 'VERSION.md')).read().strip(),
     include_package_data=True,
     author="Makina Corpus",
     author_email="terralego-pypi@makina-corpus.com",
@@ -20,7 +20,7 @@ setup(
     description_content_type="text/markdown",
     long_description_content_type="text/markdown",
     packages=find_packages(),
-    url='https://github.com/Terralego/django-terra-utils.git',
+    url='https://github.com/Terralego/django-terra-settings.git',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',

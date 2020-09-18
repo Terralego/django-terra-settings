@@ -4,7 +4,7 @@ How to use
 What is it
 ----------
 
-django-terra-utils is a suite of tools used by terralego apps, but which can be used as standalone.
+django-terra-settings is a suite of tools used by terralego apps, but which can be used as standalone.
 It aims to provide generic helpers that are used in a transversal way.
 
 
@@ -13,7 +13,7 @@ What it contains
 
 Here is described each module content
 
-terra_utils.helpers.responses
+terra_settings.helpers.responses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 get_media_response()
@@ -27,7 +27,7 @@ with `X-Accel <https://www.nginx.com/resources/wiki/start/topics/examples/x-acce
 method to serve media files to end users.
 
 
-terra_utils.management.commands
+terra_settings.management.commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 populatedata
@@ -43,7 +43,7 @@ Those options are available:
  - ``-m`` : load data for only listed modules
 
 
-terra_utils.templatetags.settings_tags
+terra_settings.templatetags.settings_tags
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A set of django template tags
@@ -62,7 +62,7 @@ get_item(key)
 Return the key content in a dict.
 
 
-terra_utils.filters
+terra_settings.filters
 ^^^^^^^^^^^^^^^^^^^
 
 DRF filter backends.
@@ -84,7 +84,7 @@ The usage through the API is like this:
 ``/my/api/endpoint?from_date=2000-01-01&to_date=2010-12-31``
 
 
-terra_utils.mixins
+terra_settings.mixins
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -111,7 +111,7 @@ Simple mixin that provide an abstract django model with two fields (``created_at
 
 
 
-terra_utils.pagination
+terra_settings.pagination
 ^^^^^^^^^^^^^^^^^^^^^^
 
 PagePagination
@@ -120,7 +120,7 @@ PagePagination
 PageNumberPagination herited model that has default terralego pagination configuration.
 
 
-terra_utils.views
+terra_settings.views
 ^^^^^^^^^^^^^^^^^
 
 SettingsView

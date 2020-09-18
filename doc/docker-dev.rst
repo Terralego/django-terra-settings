@@ -5,7 +5,7 @@ Docker development
 To start a dev instance
 """""""""""""""""""""""
 
-Define settings you wants in `test_terra_utils` django project.
+Define settings you wants in `test_terra_settings` django project.
 
 ``docker-compose up``
 
