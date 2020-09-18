@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class TerraUtilsConfig(AppConfig):
+class TerraSettingsConfig(AppConfig):
     name = 'terra_settings'
