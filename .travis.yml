@@ -60,7 +60,7 @@ jobs:
     - pip install flake8
     before_script: skip
     script:
-    - flake8 terra_settings
+    - flake8 terra_settings test_terra_settings
     after_success: skip
 
   - stage: deploy
