@@ -2,7 +2,7 @@ from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from terra_utils.settings import TERRA_APPLIANCE_SETTINGS
+from terra_settings.settings import TERRA_APPLIANCE_SETTINGS
 
 
 class SettingsView(APIView):

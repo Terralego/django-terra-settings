@@ -3,7 +3,7 @@ omit =
     */tests*
     */migrations*
     */lib*
-    test_terra_utils/*
+    test_terra_settings/*
     doc/*
     manage.py
 

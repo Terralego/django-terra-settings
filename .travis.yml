@@ -60,7 +60,7 @@ jobs:
     - pip install flake8
     before_script: skip
     script:
-    - flake8 terra_utils
+    - flake8 terra_settings test_terra_settings
     after_success: skip
 
   - stage: deploy
@@ -71,8 +71,9 @@ jobs:
       skip_cleanup: true
       stage: deploy
       provider: pypi
-      user: "$PYPI_USER"
+      user: "__token__"
       password:
-        secure: pFnEN/4nfcGNMwOVwBiO5K0hZGVbjPbpMxwxfA9ffGlkJ4lHEU+ElrSvau5TV1Pe0gXCiOHcdHyuEzoi23p75rme+BlNkK+P6YRd0/DCoTFrr80QEKFsyWqoAt7ep67jxKHoO7fy5h1M+VXZwfXZgtiG5zPjkU9cYg0LINf/S7vGMlgz82rv9vZr+u1pG/83oUyeVOibAVnF19XgHXS0BL6VDnc6c4C1odk6AtnSqaI0ASl7q63aXrUbQMpT0+B9esLpEvUHmTrI2t4aI1X02VnhCoM+Ry8b/ltDnFVB0qcnvPqVPdMYdeICnc3bzAJlDUU3xNH1XUo6RWcSbt11woP0MB6NahjYYet7DB8p/dMPgpfbyVSHw2vchy3Kd5teIlssihbuObCPpBhjbdWrKKvhm5rlWslt+Tymcl8MUBNO+2tQiTOGpJZ5dSSyC08VM31+cbxUYWPnmGbFdXlotgrvYMgxLk4n4NVqSa+gG/2wPzWy4OQJhN6eBZEv+qkUhKCB3+5k0/zPOJEjRTh/6b4BG8u+AO9nrNVZsNfY2UgcpeSwdVaU69XijIvQZex2Uck5GdtsWXdrEWhlBzKFXqWK05amavZ5SxsErjT6ljmawE4J8NgL9X+w86k5gJst98bGHhl/7i0V9PX1NwlTHcuAgAZZNAmNtIm1VSm3vWc=
+        secure: JgDfqo8GOIbeKuK8tHKsbdNKBBN+oSmM5xJOKEdWJcNZUNzxxnhsKCgpbT075Ne7aWevyAeZXi9eX3iKFrvMoBHZ4HRN+CrKbj4348jy4Uf1sw0g54pDRnFVJgOtJdgJJmix3BBEY6W1Y2tF9jQTWyW6TFgLTlsmFR6TQNh8D4RdCgoiOgtnh+DrtxZczcDWVoTasksooiILnJshf5ZxD2lbCbYxM3p61K1naht0O5r5JJjJfP/bjmgTkPRuOdE3cbVmWK6QEbKH5kfOB8ykVUmjwck5mVP6TtQ0U0eEaFxqx8ofK+1fLeGK0Ixa+57gMqKFzErjpqU0P7O9NpHEL4lHudKkPVEpaFHqrMBvs9esM+3KVYTz2kRohGfaSFejERtCZDWPxkAM5AuSHsF6KsNPsN4dSeS2Cxzk/VKvnf6SghlgSY0R2dh0WZ0MrRgq/ZhzQKgHR0pfx+TevkJJS4hPDNh8as7WBNREevVazMQNyFehxBuNrOEYHT1xR6IXtuYQl0Ieq8rGQ8OqqrLg6FzhT9+KSlOxjvmjyvWVd9dEjsEQOSvd+FlkULosGiZURItHa0+pnW2aLFq7Uoozws3LY1kTF9oSgYpx0B3r2LRKR6pm4Gieq7eWkZW6B17oxYXkAH9b43c+pTUiuL3B5I1EQWFw4XBFHBkBUke4vCU=
+
       on:
         tags: true

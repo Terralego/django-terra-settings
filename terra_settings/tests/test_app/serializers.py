@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from terra_utils.tests.test_app.models import DummyModel
+from terra_settings.tests.test_app.models import DummyModel
 
 
 class DummySerializer(serializers.ModelSerializer):

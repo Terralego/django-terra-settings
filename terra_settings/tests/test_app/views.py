@@ -1,8 +1,8 @@
 from rest_framework import generics
 
-from terra_utils.filters import JSONFieldOrderingFilter
-from terra_utils.tests.test_app.models import DummyModel
-from terra_utils.tests.test_app.serializers import DummySerializer
+from terra_settings.filters import JSONFieldOrderingFilter
+from terra_settings.tests.test_app.models import DummyModel
+from terra_settings.tests.test_app.serializers import DummySerializer
 
 
 class OrderingListView(generics.ListAPIView):
