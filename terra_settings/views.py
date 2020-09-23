@@ -1,4 +1,5 @@
 from django.conf import settings
+from mapbox_baselayer.models import MapBaseLayer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -18,3 +19,15 @@ class SettingsView(APIView):
         terra_settings.update(TERRA_APPLIANCE_SETTINGS)
 
         return Response(terra_settings)
+
+
+class BaseLayerView(APIView):
+    def get(self, request, *args, **kwargs):
+        baselayers = [
+            {
+                "id": baselayer.id,
+                "name": baselayer.name,
+            }
+            for baselayer in MapBaseLayer.objects.all()
+        ]
+        return Response(baselayers)
