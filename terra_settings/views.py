@@ -2,7 +2,9 @@ from django.conf import settings
 from mapbox_baselayer.models import MapBaseLayer
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewset
 
+from terra_settings.serializers import BaseLayerSerializer
 from terra_settings.settings import TERRA_APPLIANCE_SETTINGS
 
 
@@ -13,7 +15,8 @@ class SettingsView(APIView):
     def get(self, request):
         terra_settings = {
             # TODO: move this after terracommon.accounts split
-            'jwt_delta': settings.JWT_AUTH['JWT_EXPIRATION_DELTA']
+            'jwt_delta': settings.JWT_AUTH['JWT_EXPIRATION_DELTA'],
+            'base_layers': BaseLayerSerializer(MapBaseLayer.objects.all(), many=True).data,
         }
 
         terra_settings.update(TERRA_APPLIANCE_SETTINGS)
@@ -21,13 +24,6 @@ class SettingsView(APIView):
         return Response(terra_settings)
 
 
-class BaseLayerView(APIView):
-    def get(self, request, *args, **kwargs):
-        baselayers = [
-            {
-                "id": baselayer.id,
-                "name": baselayer.name,
-            }
-            for baselayer in MapBaseLayer.objects.all()
-        ]
-        return Response(baselayers)
+class BaseLayerViewSet(ModelViewset):
+    serializer_class = BaseLayerSerializer
+    queryset = MapBaseLayer.objects.all()
