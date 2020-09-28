@@ -2,7 +2,7 @@ from django.conf import settings
 from mapbox_baselayer.models import MapBaseLayer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.viewsets import ModelViewset
+from rest_framework.viewsets import ModelViewSet
 
 from terra_settings.serializers import BaseLayerSerializer
 from terra_settings.settings import TERRA_APPLIANCE_SETTINGS
@@ -24,6 +24,6 @@ class SettingsView(APIView):
         return Response(terra_settings)
 
 
-class BaseLayerViewSet(ModelViewset):
+class BaseLayerViewSet(ModelViewSet):
     serializer_class = BaseLayerSerializer
     queryset = MapBaseLayer.objects.all()
