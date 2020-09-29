@@ -47,6 +47,7 @@ setup(
         "coreapi",
         "coreschema",
         'psycopg2>=2.8',
+        'django-mapbox-baselayer>=0.0.6',
     ],
     extras_require={
         'dev': [
