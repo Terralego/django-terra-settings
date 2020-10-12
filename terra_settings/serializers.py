@@ -6,4 +6,4 @@ class BaseLayerSerializer(ModelSerializer):
 
     class Meta:
         model = MapBaseLayer
-        field = "__all__"
+        fields = "__all__"
