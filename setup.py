@@ -8,6 +8,11 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(HERE, 'README.md')).read()
 CHANGES = open(os.path.join(HERE, 'CHANGES.md')).read()
 
+test_require = [
+    'factory-boy',
+    'flake8',
+    'coverage',
+]
 
 setup(
     name='django-terra-settings',
@@ -15,7 +20,7 @@ setup(
     include_package_data=True,
     author="Makina Corpus",
     author_email="terralego-pypi@makina-corpus.com",
-    description='Common utils for terra apps.',
+    description='Common settings and utils for terra apps.',
     long_description=README + '\n\n' + CHANGES,
     description_content_type="text/markdown",
     long_description_content_type="text/markdown",
@@ -39,6 +44,8 @@ setup(
         'Framework :: Django :: 3.0',
         'Framework :: Django :: 3.1',
     ],
+    python_requires='>=3.6',
+    tests_require=test_require,
     install_requires=[
         'django>=2.2',
         'djangorestframework',
@@ -50,9 +57,8 @@ setup(
         'django-mapbox-baselayer>=0.0.6',
     ],
     extras_require={
-        'dev': [
-            'flake8',
-            'coverage',
+        'dev': test_require + [
+            'django-debug-toolbar'
         ]
     }
 )
