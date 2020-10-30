@@ -4,7 +4,9 @@ CHANGELOG
 0.1.2.dev0     (2020-10-12)
 ---------------------------
 
-* Enhance Base layer API to manage tile urls
+* API enhancement
+  * Manage raster tiles urls
+  * Add TileJSON url in MapBoxBaseLayerSerializer
 
 
 0.1.1          (2020-10-12)

@@ -34,6 +34,23 @@ class MapBaseLayerViewsSetTesCase(APITestCase):
         data = response.json()
         self.assertEqual(data['name'], 'OSM')
 
+    def test_tilejson_url_in_list(self):
+        response = self.client.get(reverse('baselayer-list'))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        data = response.json()
+        self.assertTrue(len(data['results']) == 1)
+        self.assertEqual(data['results'][0]['tilejson_url'], 'http://testserver/baselayer/1/tilejson/')
+
+    def test_tilejson_in_list(self):
+        pk = MapBaseLayer.objects.get().pk
+        response = self.client.get(reverse('baselayer-detail', args=(pk, )))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        data = response.json()
+        tilejson_url = data['tilejson_url']
+        response = self.client.get(tilejson_url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(response.json())
+
     def test_create(self):
         data = {
             "tiles": [

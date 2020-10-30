@@ -16,10 +16,16 @@ class BaseLayerTileSerializer(serializers.ModelSerializer):
 
 class MapBaseLayerSerializer(serializers.ModelSerializer):
     tiles = BaseLayerTileSerializer(many=True)
+    tilejson_url = serializers.HyperlinkedIdentityField(view_name='baselayer-tilejson', read_only=True)
 
     class Meta:
         model = MapBaseLayer
-        fields = "__all__"
+        fields = (
+            'id', 'tiles', 'name', 'order', 'slug',
+            'base_layer_type', 'map_box_url', 'sprite',
+            'glyphs', 'min_zoom', 'max_zoom',
+            'tile_size', 'attribution', 'tiles', 'tilejson_url'
+        )
 
     def create(self, validated_data):
         """ handle sub tile definition """
