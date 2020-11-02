@@ -1,10 +1,8 @@
 from django.conf import settings
-from mapbox_baselayer.models import MapBaseLayer
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from terra_settings.base_layers.serializers import MapBaseLayerSerializer
 from terra_settings.settings import TERRA_APPLIANCE_SETTINGS
 
 
@@ -16,9 +14,15 @@ class SettingsView(APIView):
         terra_settings = {
             # for the moment, language is fixed and defined by backend instance
             'language': settings.LANGUAGE_CODE.lower(),
-            'base_layers': MapBaseLayerSerializer(MapBaseLayer.objects.all(), many=True).data,
         }
 
+        if 'mapbox_baselayer' in settings.INSTALLED_APPS:
+            from mapbox_baselayer.models import MapBaseLayer
+            from terra_settings.base_layers.serializers import PublicMapBaseLayerSerializer
+
+            terra_settings['base_layers'] = PublicMapBaseLayerSerializer(MapBaseLayer.objects.all(), many=True).data
+
+        # always override terra_settings data with TERRA_APPLIANCE_SETTINGS settings content
         terra_settings.update(TERRA_APPLIANCE_SETTINGS)
 
         return Response(terra_settings)

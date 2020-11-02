@@ -10,7 +10,7 @@ class SettingsViewTestCase(APITestCase):
         response = self.client.get(reverse('settings'))
         self.assertEqual(200, response.status_code)
         self.assertListEqual(
-            ['jwt_delta', 'base_layers'],
+            ['language', 'base_layers', ],
             list(response.json())
         )
 

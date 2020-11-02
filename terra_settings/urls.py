@@ -8,7 +8,7 @@ router = SimpleRouter()
 if 'mapbox_baselayer' in settings.INSTALLED_APPS:
     from terra_settings.base_layers.views import BaseLayerViewSet
     # enable mapbox_baselayer related endpoints if module enabled in backend
-    router.register('base-layer', BaseLayerViewSet, basename='base-layer')
+    router.register('baselayer', BaseLayerViewSet, basename='baselayer')
 
 urlpatterns = [
     # public api view

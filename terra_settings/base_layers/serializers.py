@@ -50,3 +50,14 @@ class MapBaseLayerSerializer(serializers.ModelSerializer):
         instance.tiles.set(tile_instances)
         instance.save()
         return instance
+
+
+class PublicMapBaseLayerSerializer(serializers.ModelSerializer):
+    """ Serializer used to provide quick select list in default public settings API endpoint """
+    tilejson_url = serializers.HyperlinkedIdentityField(view_name='baselayer-tilejson', read_only=True)
+
+    class Meta:
+        model = MapBaseLayer
+        fields = (
+            'id', 'order', 'name', 'slug', 'tilejson_url'
+        )
