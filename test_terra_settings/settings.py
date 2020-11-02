@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mapbox_baselayer',
+    'rest_framework',
     'terra_settings',
     'terra_settings.tests.test_app',
-    'mapbox_baselayer',
 ]
 
 MIDDLEWARE = [

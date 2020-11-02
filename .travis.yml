@@ -6,13 +6,11 @@ language: python
 
 python:
 - '3.6'
-- '3.7'
 - '3.8'
 
 env:
   matrix:
     - DJANGO_VERSION=2.2.*
-    - DJANGO_VERSION=3.0.*
     - DJANGO_VERSION=3.1.*
     - DJANGO_VERSION=dev
 
@@ -53,6 +51,7 @@ after_success:
 jobs:
   allow_failures:
     - env: DJANGO_VERSION=dev
+
   include:
   - stage: lint
     before_install: skip
