@@ -12,5 +12,6 @@ class BaseLayerViewSet(viewsets.ModelViewSet):
 
     @action(detail=True)
     def tilejson(self, request, *args, **kwargs):
+        """ Full tilejson """
         base_layer = self.get_object()
         return Response(base_layer.tilejson)
