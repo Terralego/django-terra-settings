@@ -27,6 +27,5 @@ UPDATE
 
 Create
 
-* POST /api/baselayers/mapbox
-* POST /api/baselayers/vector
-* POST /api/baselayers/raster
+* POST /api/baselayers/
+
