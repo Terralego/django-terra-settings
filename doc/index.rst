@@ -11,9 +11,9 @@
    :alt: Maintainability
 
 terra_settings
-===========
+==============
 
-Common utils app for terralego
+Settings app for terralego based projects
 
 Provide frontend required settings
 
@@ -22,5 +22,6 @@ Provide frontend required settings
    installation
    docker-dev
    configuration
+   modules
    use
    commands

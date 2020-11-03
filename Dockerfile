@@ -14,5 +14,5 @@ COPY . /code/src
 WORKDIR /code/src
 
 # Install dev requirements
-RUN /code/venv/bin/pip3 install --no-cache-dir -e .[dev] -U
+RUN /code/venv/bin/pip3 install --no-cache-dir .[dev] -U
 RUN . /code/venv/bin/activate
