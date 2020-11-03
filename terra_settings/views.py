@@ -22,7 +22,7 @@ class SettingsView(APIView):
 
             terra_settings['base_layers'] = PublicMapBaseLayerSerializer(MapBaseLayer.objects.all(), many=True).data
 
-        # always override terra_settings data with TERRA_APPLIANCE_SETTINGS settings content
+        # always override terra_settings data with TERRA_APPLIANCE_SETTINGS content
         terra_settings.update(TERRA_APPLIANCE_SETTINGS)
 
         return Response(terra_settings)
