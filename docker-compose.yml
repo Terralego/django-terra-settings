@@ -15,7 +15,6 @@ services:
       - POSTGRES_HOST=postgres
     volumes:
       - .:/code/src
-      - ./test_terra_settings:/code/test_terra_settings
     ports:
       - "8000:8000"
     command: ./manage.py runserver 0.0.0.0:8000
