@@ -18,7 +18,7 @@ class BaseLayerTileSerializer(serializers.ModelSerializer):
 
 
 class MapBaseLayerSerializer(serializers.ModelSerializer):
-    tiles = BaseLayerTileSerializer(many=True)
+    tiles = BaseLayerTileSerializer(many=True, required=False)
     tilejson_url = serializers.SerializerMethodField()
 
     def get_tilejson_url(self, instance):
@@ -58,13 +58,14 @@ class MapBaseLayerSerializer(serializers.ModelSerializer):
         for key, value in validated_data.items():
             # update data for each instance validated value
             setattr(instance, key, value)
-        # delete tiles not in putted data
-        instance.tiles.exclude(url__in=[tile for tile in tiles]).delete()
-        tile_instances = [
-            BaseLayerTile.objects.get_or_create(url=tile,
-                                                base_layer=instance)[0] for tile in tiles
-        ]
-        instance.tiles.set(tile_instances)
+        if tiles:
+            # delete tiles not in putted data
+            instance.tiles.exclude(url__in=[tile for tile in tiles]).delete()
+            tile_instances = [
+                BaseLayerTile.objects.get_or_create(url=tile,
+                                                    base_layer=instance)[0] for tile in tiles
+            ]
+            instance.tiles.set(tile_instances)
         instance.save()
         return instance
 

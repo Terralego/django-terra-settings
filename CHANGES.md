@@ -4,6 +4,7 @@ CHANGELOG
 0.1.3.dev0     (XXXX-XX-XX)
 ---------------------------
 
+* Tiles is not required anymore for add / edit mapbox base layer
 
 0.1.2          (2020-11-03)
 ---------------------------
