@@ -49,10 +49,8 @@ setup(
     install_requires=[
         'django>=2.2',
         'djangorestframework',
-        "django-url-filter>=0.3",
+        "django-filter",
         "python-magic>=0.4",
-        "coreapi",
-        "coreschema",
         'psycopg2>=2.8',
         'django-mapbox-baselayer>=0.0.6',
     ],
