@@ -49,7 +49,6 @@ setup(
     install_requires=[
         'django>=2.2',
         'djangorestframework',
-        "django-filter",
         "python-magic>=0.4",
         'psycopg2>=2.8',
         'django-mapbox-baselayer>=0.0.6',
