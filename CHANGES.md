@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 
-0.1.4.dev0     (XXXX-XX-XX)
+1.0.0          (2020-11-18)
 ---------------------------
+
+* Remove functions backport in opp
 
 
 0.1.3          (2020-11-16)
