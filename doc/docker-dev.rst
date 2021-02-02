@@ -14,7 +14,7 @@ the same command twice.
 
 Then initialize the database:
 
-``compose run web /code/venv/bin/python3 /code/src/manage.py migrate``
+``docker-compose run --rm web /code/venv/bin/python3 /code/src/manage.py migrate``
 
 You can now edit your code. A django runserver is launched internally so the
 this is an autoreload server.
@@ -27,5 +27,5 @@ Test
 
 To run test suite, just launch:
 
-``docker-compose run web /code/venv/bin/python3 /code/src/manage.py test``
+``docker-compose run --rm web /code/venv/bin/python3 /code/src/manage.py test``
 
