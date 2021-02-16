@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-02 13:45+0000\n"
+"POT-Creation-Date: 2021-02-16 15:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,24 +16,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: terra_settings/apps.py:10
 msgid "Can manage base map layers"
-msgstr "Peut administrer les fonds de carte"
+msgstr "Can manage base map layers"
 
-#: terra_settings/base_layers/serializers.py:37
 msgid "'tiles' should not be filled for mapbox base layers."
-msgstr "Le titre ne doit pas être renseigné pour les fonds de carte mapbox"
+msgstr "'tiles' should not be filled for mapbox base layers."
 
-#: terra_settings/base_layers/serializers.py:39
 msgid "'map_box_url' should be filled for mapbox base layers."
-msgstr "L'URL mapbox doit être renseignée pour les fonds de carte mapbox."
+msgstr "'map_box_url' should be filled for mapbox base layers."
 
-#: terra_settings/base_layers/serializers.py:42
 msgid "'tiles' should be filled for raster and vector base layers."
-msgstr "Le titre doit être renseigné pour les fonds de carte raster ou vector"
+msgstr "'tiles' should be filled for raster and vector base layers."
 
-#: terra_settings/base_layers/serializers.py:44
 msgid "'map_box_url' should not be filled for raster and vector base layers."
-msgstr "L'URL mapbox ne doit pas être renseignée pour les fonds de carte vector ou raster."
+msgstr "'map_box_url' should not be filled for raster and vector base layers."
