@@ -46,7 +46,7 @@ class MapBaseLayerSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """ handle sub tile definition """
-        tiles = validated_data.pop('tiles')
+        tiles = validated_data.pop('tiles', [])
         instance = MapBaseLayer.objects.create(**validated_data)
         for tile in tiles:
             BaseLayerTile.objects.create(base_layer=instance, url=tile)
@@ -54,7 +54,7 @@ class MapBaseLayerSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         """ handle sub tile definition """
-        tiles = validated_data.pop('tiles')
+        tiles = validated_data.pop('tiles', [])
         for key, value in validated_data.items():
             # update data for each instance validated value
             setattr(instance, key, value)
