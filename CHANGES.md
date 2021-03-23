@@ -4,6 +4,7 @@ CHANGELOG
 1.0.3.dev0     (XXXX-XX-XX)
 ---------------------------
 
+* Fix bug caused missing "tiles" key when creating or updating a mabpox baselayer
 
 
 1.0.2          (2021-02-16)

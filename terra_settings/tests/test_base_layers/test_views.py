@@ -35,7 +35,10 @@ class MapBaseLayerViewsSetTesCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         data = response.json()
         self.assertTrue(len(data['results']) > 1)
-        self.assertEqual(data['results'][1]['tilejson_url'], 'http://testserver/baselayer/1/tilejson/')
+
+        # We expect the result to be at index 1 because of the ordering
+        osm_layer = MapBaseLayer.objects.get(slug='osm')
+        self.assertEqual(data['results'][1]['tilejson_url'], f'http://testserver/baselayer/{osm_layer.id}/tilejson/')
 
     def test_tilejson_in_list(self):
         pk = MapBaseLayer.objects.get(slug='osm').pk
